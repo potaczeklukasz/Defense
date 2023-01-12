@@ -26,7 +26,7 @@ namespace Turret
                 Vector2 targetPosition = _mainCamera.ScreenToWorldPoint(touchPosition);
 
                 var spawnPosition = Vector2.MoveTowards(transform.position, targetPosition, .75f);
-                var direction = targetPosition - spawnPosition;
+                var direction = targetPosition - (Vector2) transform.position;
 
                 var bullet = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
                 var bulletControls = bullet.GetComponent<Bullet.Bullet>();

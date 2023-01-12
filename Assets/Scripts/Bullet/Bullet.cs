@@ -9,6 +9,11 @@ namespace Bullet
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
 
+        private void OnBecameInvisible()
+        {
+            Destroy(gameObject);
+        }
+
         public void SetDirection(Vector2 direction)
         {
             _direction = direction;
